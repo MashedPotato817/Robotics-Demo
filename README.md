@@ -5,7 +5,7 @@
 ## 启动
 
 ```powershell
-cd 'C:\Users\Mashed Potato\Desktop\260916机器人技术基础(王振)\project\TypeScript_demo'
+cd 'D:\github\Robotics-Demo'
 npm install
 npm run dev
 ```
@@ -35,3 +35,17 @@ npm run build
 ```
 
 内部长度单位与参考案例保持一致；位置逆解仅约束末端位置，不约束姿态。
+
+## GitHub Pages 部署
+
+仓库的 Settings → Pages → Source 选择 `GitHub Actions`。推送到 `master` 或手动运行 Pages 工作流即可部署。
+
+工作流先读取 Pages 的 `base_path`，再通过 `--base` 传给 Vite，自动适配仓库改名和自定义域名。本地开发与默认构建使用根路径 `/`。
+
+当前站点地址：https://MashedPotato817.github.io/Robotics-Demo/
+
+本地验证项目站点的构建：
+
+```powershell
+npm run build -- --base /Robotics-Demo/
+```
